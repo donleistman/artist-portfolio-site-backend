@@ -1,20 +1,24 @@
 <?php
 
-$post_type = "painting";
+// GOT THIS ONLINE TO SHOW ACF FIELDS -- MAY NOT ACTUALLY BE NECESSARY
 
-function my_rest_prepare_post($data, $post, $request) {
-    $_data = $data->data;
+// $post_type = "painting";
 
-    $fields = get_fields($post->ID);
+// function my_rest_prepare_post($data, $post, $request) {
+//     $_data = $data->data;
 
-    foreach ($fields as $key => $value){
-        $_data[$key] = get_field($key, $post->ID);
-    }
+//     $fields = get_fields($post->ID);
 
-    $data->data = $_data;
-    return $data;
-}
+//     foreach ($fields as $key => $value){
+//         $_data[$key] = get_field($key, $post->ID);
+//     }
 
-add_filter("rest_prepare_{$post_type}", 'my_rest_prepare_post', 10, 3);
+//     $data->data = $_data;
+//     return $data;
+// }
+
+// add_filter("rest_prepare_{$post_type}", 'my_rest_prepare_post', 10, 3);
+
+//// END CODE FROM ONLINE FOR ACF FIELDS
 
 ?>
